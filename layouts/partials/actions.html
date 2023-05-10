@@ -1,7 +1,11 @@
 {{ with .Site.Params.actions -}}
 <section class="actions">
-  {{ range . }}
-  <a class="action" href="{{ .url }}" target="_blank">{{ .name }}</a>
-  {{ end }}
-</section>
+  <h1>Contact me!</h1>
+  <form action="{{ .url }}" method="post">      
+    <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+    <input name="email" type="text" class="feedback-input" placeholder="Email" />
+    <input name="subject" type="text" class="feedback-input" placeholder="Subject" />
+    <textarea name="text" class="feedback-input" placeholder="Message"></textarea>
+    <input type="submit" value="SUBMIT"/>
+  </form>
 {{- end }}
