@@ -29,7 +29,6 @@ title = "Awesome Identity for Hugo"
   credly = "john.smith"
 ## Actions config
 [params.actions]
-  url = "test.com"
   recap_site_key = "eCAPTCHA_site_key"
   backend = "https://your-backend-api.com/submit"
   frontend_domain = "https://your-frontend-domain.com"
