@@ -10,14 +10,31 @@ title = "Awesome Identity for Hugo"
   lastname = "Smith"
   title = "VP of Engineering / Godfather"
   bio = """John Smith brings over 40 years experience leading, contributing to, and growing engineering organizations in top [**VR**](https://en.wikipedia.org/wiki/Virtual_reality) technology companies.
-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et lacinia metus. Aliquam venenatis, orci ornare mollis congue, mi arcu lobortis tellus, id pulvinar ex ante eu mauris.
-
   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
   """
-
+## Contacts Configurations
+[params.contacts]
+  email = "john.smith@example.com"
+  github = "john.smith"
+  gitlab = "john.smith"
+  twitter = "john.smith"
+  facebook = "john.smith"
+  linkedin = "john.smith"
+  instagram = "john.smith"
+  stackoverflow = "7919458"
+  keybase = "john.smith"
+  medium = "john.smith"
+  xing = "john.smith"
+  credly = "john.smith"
+## Actions config
+[params.actions]
+  url = "test.com"
+  recap_site_key = "eCAPTCHA_site_key"
+  backend = "https://your-backend-api.com/submit"
+  frontend_domain = "https://your-frontend-domain.com"
 
 ## Footer Configurations
 [params.footer]
   copyright = "© 2019-2020 Byungjin Park. [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)."
-  poweredBy = true
+

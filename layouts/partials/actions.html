@@ -1,11 +1,43 @@
 {{ with .Site.Params.actions -}}
+<script src="https://www.google.com/recaptcha/api.js?render={{ .recap_site_key }}"></script>
 <section class="actions">
   <h1>Contact me!</h1>
-  <form action="{{ .url }}" method="post">      
-    <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+  <script>
+    function onClick(e) {
+      e.preventDefault();
+      var response = grecaptcha.getResponse();
+
+      if (response.length === 0) {
+        alert("Please complete the reCAPTCHA challenge.");
+        return;
+      }
+
+      var formData = new FormData(document.querySelector("form"));
+      console.log(formData)
+
+      fetch("{{ .backend }}", { // Update this URL
+        method: "POST",
+        body: formData,
+        headers: {
+          'Origin': '{{ .frontend_domain }}' // Replace with your frontend domain
+        }
+      })
+      .then(function(response) {
+        // Handle response from the backend (e.g., show success message)
+      })
+      .catch(function(error) {
+        // Handle errors (e.g., show error message)
+      });
+    }
+  </script>
+  
+  <form action="{{ .url }}" method="post">
+    <div class="g-recaptcha" data-sitekey="{{ .recap_site_key }}"></div>
+    <input name="name" type="text" class="feedback-input" placeholder="Name" />
     <input name="email" type="text" class="feedback-input" placeholder="Email" />
     <input name="subject" type="text" class="feedback-input" placeholder="Subject" />
     <textarea name="text" class="feedback-input" placeholder="Message"></textarea>
-    <input type="submit" value="SUBMIT"/>
+    <button type="button" id="submit-button" onclick="onClick(event)">SEND</button>
   </form>
+</section>
 {{- end }}
